@@ -41,8 +41,6 @@ $(document).ready(function () {
             var text = localStorage.getItem(eachHour);
             $(this).val(text);
         });
-        
-
 
     }
     
