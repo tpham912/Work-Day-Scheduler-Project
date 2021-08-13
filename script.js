@@ -25,15 +25,28 @@ $(document).ready(function () {
             var timeBlockHour = splitArr[1];
             console.log(timeBlockHour);
 
+            if (currentHour < timeBlockHour) {
+                $(this).css("background-color", "#d3d3d3");
+            } else if (currentHour > timeBlockHour) {
+                $(this).css("background-color", "#77dd77");
+            } else { 
+                $(this).css("background-color", "#ff6961");   
+            }
         });
     }
+    
+    function loadText() {
+        $(".description").each(function () {
+            var eachHour = $(this).parent().attr("id");
+            var text = localStorage.getItem(eachHour);
+            $(this).val(text);
+        });
+        
+
+
+    }
+    
     hourTracker();
+    loadText();
 })
-
-//function for current time
-
-//use for loop for each time block
-
-
-
 
